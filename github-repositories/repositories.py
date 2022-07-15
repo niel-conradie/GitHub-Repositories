@@ -15,14 +15,13 @@ print(f"Total repositories: {data['total_count']}")
 items = data["items"]
 print(f"Repositories returned: {len(items)}")
 
-# Examine the first repository.
-repository = items[0]
+# Examine each repository.
 print("\nSelected information about each repository:")
-for data in items:
-    print(f"\nName: {repository['name']}")
-    print(f"Owner: {repository['owner']['login']}")
-    print(f"Stars: {repository['stargazers_count']}")
-    print(f"Repository: {repository['html_url']}")
-    print(f"Created: {repository['created_at']}")
-    print(f"Updated: {repository['updated_at']}")
-    print(f"Description: {repository['description']}")
+for item in items:
+    print(f"\nName: {item['name']}")
+    print(f"Owner: {item['owner']['login']}")
+    print(f"Stars: {item['stargazers_count']}")
+    print(f"Repository: {item['html_url']}")
+    print(f"Created: {item['created_at']}")
+    print(f"Updated: {item['updated_at']}")
+    print(f"Description: {item['description']}")
