@@ -17,11 +17,12 @@ print(f"Repositories returned: {len(items)}")
 
 # Examine the first repository.
 repository = items[0]
-print("\nSelected information about first repository:")
-print(f"Name: {repository['name']}")
-print(f"Owner: {repository['owner']['login']}")
-print(f"Stars: {repository['stargazers_count']}")
-print(f"Repository: {repository['html_url']}")
-print(f"Created: {repository['created_at']}")
-print(f"Updated: {repository['updated_at']}")
-print(f"Description: {repository['description']}")
+print("\nSelected information about each repository:")
+for data in items:
+    print(f"\nName: {repository['name']}")
+    print(f"Owner: {repository['owner']['login']}")
+    print(f"Stars: {repository['stargazers_count']}")
+    print(f"Repository: {repository['html_url']}")
+    print(f"Created: {repository['created_at']}")
+    print(f"Updated: {repository['updated_at']}")
+    print(f"Description: {repository['description']}")
