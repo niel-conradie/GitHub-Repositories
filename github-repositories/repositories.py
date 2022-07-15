@@ -1,5 +1,8 @@
 import requests
 
+from plotly.graph_objs import Bar
+from plotly import offline
+
 
 # Make an API call and store the response.
 url = "https://api.github.com/search/repositories?q=language:python&sort=stars"
@@ -25,3 +28,27 @@ for item in items:
     print(f"Created: {item['created_at']}")
     print(f"Updated: {item['updated_at']}")
     print(f"Description: {item['description']}")
+
+# Preparing visualization data.
+names, stars = [], []
+for item in items:
+    names.append(item["name"])
+    stars.append(item["stargazers_count"])
+
+# Make visualization.
+visual_data = [
+    {
+        "type": "bar",
+        "x": names,
+        "y": stars,
+    }
+]
+
+my_layout = {
+    "title": "Most-Starred Python Projects on Github",
+    "xaxis": {"title": "Repository"},
+    "yaxis": {"title": "Stars"},
+}
+
+fig = {"data": visual_data, "layout": my_layout}
+offline.plot(fig, filename="python_repositories.html")
