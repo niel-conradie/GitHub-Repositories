@@ -4,8 +4,10 @@ from plotly.graph_objs import Bar
 from plotly import offline
 
 
+user_input = input("\nPick a language: ").lower()
+
 # Make an API call and store the response.
-url = "https://api.github.com/search/repositories?q=language:python&sort=stars"
+url = f"https://api.github.com/search/repositories?q=language:{user_input}&sort=stars"
 headers = {"Accept": "application/vnd.github.v3+json"}
 request = requests.get(url, headers=headers)
 print(f"Status code: {request.status_code}")
@@ -78,4 +80,4 @@ my_layout = {
 }
 
 fig = {"data": visual_data, "layout": my_layout}
-offline.plot(fig, filename="github-repositories/languages/python.html")
+offline.plot(fig, filename=f"github-repositories/languages/{user_input}.html")
