@@ -41,13 +41,30 @@ visual_data = [
         "type": "bar",
         "x": names,
         "y": stars,
+        "marker": {
+            "color": "rgb(60, 100, 150)",
+            "line": {
+                "width": 1.5,
+                "color": "rgb(25, 25, 25)",
+            },
+        },
+        "opacity": 0.6,
     }
 ]
 
 my_layout = {
     "title": "Most-Starred Python Projects on Github",
-    "xaxis": {"title": "Repository"},
-    "yaxis": {"title": "Stars"},
+    "titlefont": {"size": 28},
+    "xaxis": {
+        "title": "Repository",
+        "titlefont": {"size": 24},
+        "tickfont": {"size": 14},
+    },
+    "yaxis": {
+        "title": "Stars",
+        "titlefont": {"size": 24},
+        "tickfont": {"size": 14},
+    },
 }
 
 fig = {"data": visual_data, "layout": my_layout}
