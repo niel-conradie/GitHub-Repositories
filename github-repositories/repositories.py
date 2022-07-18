@@ -51,4 +51,4 @@ my_layout = {
 }
 
 fig = {"data": visual_data, "layout": my_layout}
-offline.plot(fig, filename="python_repositories.html")
+offline.plot(fig, filename="github-repositories/languages/python.html")
