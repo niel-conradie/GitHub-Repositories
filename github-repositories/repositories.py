@@ -1,4 +1,3 @@
-from re import L
 import requests
 
 from plotly.graph_objs import Bar
@@ -31,9 +30,13 @@ for item in items:
     print(f"Description: {item['description']}")
 
 # Preparing visualization data.
-names, stars, labels = [], [], []
+links, stars, labels = [], [], []
 for item in items:
-    names.append(item["name"])
+    name = item["name"]
+    url = item["html_url"]
+    link = f"<a href='{url}'>{name}</a>"
+    links.append(link)
+
     stars.append(item["stargazers_count"])
 
     owner = item["owner"]["login"]
@@ -45,7 +48,7 @@ for item in items:
 visual_data = [
     {
         "type": "bar",
-        "x": names,
+        "x": links,
         "y": stars,
         "hovertext": labels,
         "marker": {
