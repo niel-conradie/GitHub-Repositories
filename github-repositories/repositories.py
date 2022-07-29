@@ -5,7 +5,7 @@ from plotly import offline
 
 
 class Repositories:
-    """Most-Starred Projects on Github."""
+    """Most-Starred Github repositories by language."""
 
     def user_input(self):
         """Requesting user input and validating choice."""
@@ -82,7 +82,7 @@ class Repositories:
         return links, stars, labels
 
     def visualization(self, user_input, links, stars, labels):
-        """Visualize prepared data, generate graph with plotly."""
+        """Visualize prepared data, generate graph with Plotly."""
         data = [
             {
                 "type": "bar",
@@ -101,7 +101,7 @@ class Repositories:
         ]
 
         layout = {
-            "title": f"Most-Starred {user_input.title()} Projects on Github",
+            "title": f"Most-Starred {user_input.title()} GitHub Repositories.",
             "titlefont": {"size": 28},
             "xaxis": {
                 "title": "Repository",
@@ -117,3 +117,16 @@ class Repositories:
 
         fig = {"data": data, "layout": layout}
         offline.plot(fig, filename=f"github-repositories/{user_input}.html")
+
+    def start_app(self):
+        """Starting the application."""
+        # Requesting user input.
+        user_input = self.user_input()
+        # Store data in a variable.
+        data = self.request_data(user_input)
+        # Display data in terminal.
+        self.display_request_data(data)
+        # Store relevant visualization data in variables.
+        links, stars, labels = self.prepare_visualization(data)
+        # Generate visualization and create .html file.
+        self.visualization(user_input, links, stars, labels)
