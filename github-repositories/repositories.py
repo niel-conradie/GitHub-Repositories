@@ -10,7 +10,11 @@ class Repositories:
     def user_input(self):
         """Requesting user input and validating choice."""
         while True:
-            user_input = input("\nPick a language: ").lower()
+            print(
+                "\nC - C++ - C# - Go - Java - JavaScript - PHP - Python - Ruby - Scala - TypeScript"
+            )
+
+            user_input = input("\nSelect a language: ").lower()
             choices = [
                 "c",
                 "c++",
@@ -101,7 +105,7 @@ class Repositories:
         ]
 
         layout = {
-            "title": f"Most-Starred {user_input.title()} GitHub Repositories.",
+            "title": f"Most-Starred {user_input.title()} GitHub Repositories",
             "titlefont": {"size": 28},
             "xaxis": {
                 "title": "Repository",
