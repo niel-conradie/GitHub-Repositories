@@ -17,8 +17,8 @@ GitHub Repositories can be installed via [Pip](https://pypi.org/project/pip/). T
 
 * **Clone Repository**
 ```bash
-  $ git clone https://github.com/niel-conradie/GitHub-Repositories.git
-  $ cd GitHub-Repositories
+  $ git clone https://github.com/niel-conradie/github-repositories.git
+  $ cd github-repositories
 ```
 ### **Pip Install**
 
