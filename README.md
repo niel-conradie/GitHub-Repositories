@@ -17,41 +17,42 @@ GitHub Repositories can be installed via [Pip](https://pypi.org/project/pip/). T
 
 * **Clone Repository**
 ```bash
-  $ git clone https://github.com/niel-conradie/github-repositories.git
-  $ cd github-repositories
+git clone https://github.com/niel-conradie/github-repositories.git
+```
+* **Change Directory**
+```bash
+cd github-repositories
 ```
 ### **Pip Install**
 
 * **Create Environment**
 ```bash
-  $ python -m venv .venv
+python -m venv .venv
 ```
 * **Activate Environment**
 ```bash
-  # Bash
-  $ source .venv/Scripts/activate
+# Bash
+$ source .venv/Scripts/activate
 
-  # Command Prompt
-  C:> .venv\Scripts\activate.bat
+# Command Prompt
+C:> .venv\Scripts\activate.bat
 
-  # macOS
-  $ .venv/bin/activate
+# macOS
+$ .venv/bin/activate
 
-  # PowerShell
-  PS C:> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-  PS C:> .venv\Scripts\Activate.ps1
+# PowerShell
+PS C:> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS C:> .venv\Scripts\Activate.ps1
 ```
 * **Install Requirements**
 ```bash
-  (.venv) $ python -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 ----
 ## **Usage**
 
-To launch GitHub Repositories use thus file.
-```bash
-  run.py
-```
+- To launch GitHub Repositories use the [run.py](https://github.com/niel-conradie/github-repositories/blob/master/github-repositories/run.py) file to start.
+
 ----
 ## **License**
 
