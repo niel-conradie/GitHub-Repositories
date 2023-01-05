@@ -124,13 +124,40 @@ class Repositories:
 
     def start_app(self):
         """Starting the application."""
-        # Requesting user input.
-        user_input = self.user_input()
-        # Store data in a variable.
-        data = self.request_data(user_input)
-        # Display data in terminal.
-        self.display_request_data(data)
-        # Store relevant visualization data in variables.
-        links, stars, labels = self.prepare_visualization(data)
-        # Generate visualization and create .html file.
-        self.visualization(user_input, links, stars, labels)
+        while True:
+            # Requesting user input.
+            user_input = self.user_input()
+            # Store data in a variable.
+            data = self.request_data(user_input)
+            # Display data in terminal.
+            self.display_request_data(data)
+            # Store relevant visualization data in variables.
+            links, stars, labels = self.prepare_visualization(data)
+            # Generate visualization and create .html file.
+            self.visualization(user_input, links, stars, labels)
+            # Requesting user input.
+            self.restart()
+
+    @staticmethod
+    def restart():
+        """Requesting user input and validating choice."""
+        while True:
+            print("\nTry Again?")
+            print("\nYes: Type '1'")
+            print("No: Type '2'")
+
+            try:
+                user_input = int(input("\nEnter: "))
+            except ValueError:
+                print("\nThat is not a number.")
+                continue
+
+            # User input validation conditions.
+            choices = [1, 2]
+            if user_input not in choices:
+                print(f"\n{user_input} is not an valid choice!")
+                continue
+            elif user_input == 1:
+                return
+            elif user_input == 2:
+                quit("\nThank you!")
