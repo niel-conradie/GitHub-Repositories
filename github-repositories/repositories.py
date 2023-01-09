@@ -1,20 +1,24 @@
 import requests
 
-from plotly.graph_objs import Bar
 from plotly import offline
 
 
 class Repositories:
-    """Most-Starred Github repositories by language."""
+    """Most-Starred GitHub repositories by language."""
 
-    def user_input(self):
+    @staticmethod
+    def user_input():
         """Requesting user input and validating choice."""
         while True:
+            # Display user input options.
             print(
                 "\nC - C++ - C# - Go - Java - JavaScript - PHP - Python - Ruby - Scala - TypeScript"
             )
 
+            # Requesting user input.
             user_input = input("\nSelect a language: ").lower()
+
+            # User input validation conditions.
             choices = [
                 "c",
                 "c++",
@@ -34,8 +38,9 @@ class Repositories:
             else:
                 return user_input
 
-    def request_data(self, user_input):
-        """Request API data from Github and store in a variable."""
+    @staticmethod
+    def request_data(user_input):
+        """Request API data from GitHub and store in a variable."""
         # Make an API call and store the response.
         url = f"https://api.github.com/search/repositories?q=language:{user_input}&sort=stars"
         headers = {"Accept": "application/vnd.github.v3+json"}
@@ -48,7 +53,8 @@ class Repositories:
 
         return data
 
-    def display_request_data(self, data):
+    @staticmethod
+    def display_request_data(data):
         """Display requested data in the terminal."""
         # Explore information about the repositories.
         items = data["items"]
@@ -65,19 +71,23 @@ class Repositories:
             print(f"Updated: {item['updated_at']}")
             print(f"Description: {item['description']}")
 
-    def prepare_visualization(self, data):
+    @staticmethod
+    def prepare_visualization(data):
         """Preparing relevant data for visualization."""
         items = data["items"]
 
         links, stars, labels = [], [], []
         for item in items:
+            # Links data for visualization.
             name = item["name"]
             url = item["html_url"]
             link = f"<a href='{url}'>{name}</a>"
             links.append(link)
 
+            # Stars data for visualization.
             stars.append(item["stargazers_count"])
 
+            # Labels data for visualization.
             owner = item["owner"]["login"]
             description = item["description"]
             label = f"{owner}<br />{description}"
@@ -85,7 +95,8 @@ class Repositories:
 
         return links, stars, labels
 
-    def visualization(self, user_input, links, stars, labels):
+    @staticmethod
+    def visualization(user_input, links, stars, labels):
         """Visualize prepared data, generate graph with Plotly."""
         data = [
             {
@@ -142,10 +153,12 @@ class Repositories:
     def restart():
         """Requesting user input and validating choice."""
         while True:
+            # Display user input options.
             print("\nTry Again?")
             print("\nYes: Type '1'")
             print("No: Type '2'")
 
+            # Requesting user input.
             try:
                 user_input = int(input("\nEnter: "))
             except ValueError:
