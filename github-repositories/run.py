@@ -1,8 +1,7 @@
 from repositories import Repositories
 
 
-def run():
-    """GitHub-Repositories."""
+if __name__ == "__main__":
     run = Repositories()
 
     try:
@@ -11,7 +10,3 @@ def run():
     except KeyboardInterrupt:
         # Stopping the application.
         quit("\n\nProgram Terminated")
-
-
-if __name__ == "__main__":
-    run()
