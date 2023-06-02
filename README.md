@@ -8,7 +8,7 @@ Using GitHub API to request information about specific language repositories on 
 
 ## **Requirements**
 
-- [Python 3.11.X](https://www.python.org/downloads/)
+- [Python 3.X](https://www.python.org/downloads/)
 - [Plotly](https://plotly.com/python/getting-started/)
 - [Requests](https://requests.readthedocs.io/en/latest/)
 
