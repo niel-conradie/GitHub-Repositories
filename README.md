@@ -4,16 +4,15 @@
 
 Using GitHub API to request information about specific language repositories on the site, and then generate an interactive visualization of the relative popularity of these projects using Plotly.
 
-----
+---
 
 ## **Requirements**
 
 - [Python 3.11.X](https://www.python.org/downloads/)
-- [Black](https://pypi.org/project/black/)
 - [Plotly](https://plotly.com/python/getting-started/)
 - [Requests](https://requests.readthedocs.io/en/latest/)
 
-----
+---
 
 ## **Installation**
 
@@ -62,16 +61,16 @@ PS C:> .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 ```
 
-----
+---
 
 ## **Usage**
 
 - To launch GitHub Repositories use the [run.py](https://github.com/niel-conradie/github-repositories/blob/master/github-repositories/run.py) file to start.
 
-----
+---
 
 ## **License**
 
 [MIT License](https://github.com/niel-conradie/GitHub-Repositories/blob/master/LICENSE)
 
-----
+---
